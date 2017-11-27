@@ -1,0 +1,22 @@
+version: "2"
+services:
+    homebridge:
+        build: homebridge
+        restart: always
+        expose:
+            - "51826"
+            - "8282"
+            - "5353"
+        ports:
+            - "51826:51826"
+            - "8282:8282"
+            - "5353:5353"
+        volumes:
+            - ./homebridge/start.sh:/root/start.sh
+            - ./homebridge/config.json:/root/.homebridge/config.json
+        networks:
+            - fhem-network
+
+networks:
+    fhem-network:
+        driver: bridge

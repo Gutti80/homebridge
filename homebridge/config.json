@@ -10,7 +10,7 @@
         {
             "platform": "FHEM",
             "name": "FHEM",
-            "server": "127.0.0.1",
+            "server": "192.168.0.2",
             "port": "8081",
 	    "auth": {"user": "georg", "pass": "gV49Cs13"},
             "filter": "room=Homekit"
