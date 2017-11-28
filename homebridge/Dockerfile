@@ -22,5 +22,6 @@ RUN npm install -g homebridge homebridge-fhem homebridge-http
 
 EXPOSE 51826
 
+
 COPY start.sh ./
 CMD bash ./start.sh

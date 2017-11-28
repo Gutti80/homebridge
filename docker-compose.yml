@@ -12,10 +12,8 @@ services:
             - "8282:8282"
             - "5353:5353"
         volumes:
-            - ./homebridge/start.sh:/root/start.sh
             - ./homebridge/config.json:/root/.homebridge/config.json
-        networks:
-            - fhem-network
+        network_mode: host
 
 networks:
     fhem-network:
