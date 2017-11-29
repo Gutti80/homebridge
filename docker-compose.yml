@@ -10,4 +10,5 @@ services:
             - "51826:51826"
         volumes:
             - ./homebridge/config.json:/root/.homebridge/config.json
+            - ./homebridge/avahi-daemon.conf:/etc/avahi/avahi-daemon.conf
         network_mode: host
