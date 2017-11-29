@@ -2,4 +2,4 @@
 
 /etc/init.d/dbus restart
 service avahi-daemon start
-homebridge
+homebridge -U /root/.homebridge/config/

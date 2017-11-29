@@ -2,19 +2,12 @@ version: "2"
 services:
     homebridge:
         build: homebridge
+        image: georgguttmann/homebridge-fhem
         restart: always
         expose:
             - "51826"
-            - "8282"
-            - "5353"
         ports:
             - "51826:51826"
-            - "8282:8282"
-            - "5353:5353"
         volumes:
             - ./homebridge/config.json:/root/.homebridge/config.json
         network_mode: host
-
-networks:
-    fhem-network:
-        driver: bridge

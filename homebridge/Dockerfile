@@ -18,10 +18,14 @@ ENV NODE_ENV production
 
 RUN apt-get install -y --force-yes make make gcc g++
 
-RUN npm install -g homebridge homebridge-fhem homebridge-http
+USER root
 
-EXPOSE 51826
+ADD config.json /root/.homebridge/config/config.json
 
+RUN npm install -g --unsafe-perm homebridge  && \
+npm install -g homebridge-fhem
+
+EXPOSE 5353 8282 51826
 
 COPY start.sh ./
 CMD bash ./start.sh
