@@ -23,6 +23,8 @@ USER root
 ADD config.json /root/.homebridge/config/config.json
 ADD avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
+RUN /etc/init.d/avahi-daemon restart
+
 RUN npm install -g --unsafe-perm homebridge  && \
 npm install -g homebridge-fhem
 
