@@ -21,6 +21,7 @@ RUN apt-get install -y --force-yes make make gcc g++
 USER root
 
 ADD config.json /root/.homebridge/config/config.json
+ADD avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
 RUN npm install -g --unsafe-perm homebridge  && \
 npm install -g homebridge-fhem
